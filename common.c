@@ -78,9 +78,7 @@ static void get_rocev2_gid_index(struct dev_context *ctx)
 
     while ((dp = readdir(dir)) && gid_count < max_gid_count) {
         gid_index = atoi(dp->d_name);
-        if (gid_index < 2) {
-            continue;
-        }
+
 
         snprintf(file_name, sizeof(file_name), "%s/%s", dir_name, dp->d_name);
         fp = fopen(file_name, "r");
